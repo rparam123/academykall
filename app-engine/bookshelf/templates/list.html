@@ -24,20 +24,15 @@
   Add question
 </a>
 
-{% for Question in question %}
+{% for question in questions %}
 <div class="media">
-  <a href="/questions/{{question.id}}">
-    <div class="media-body">
+   <div class="media-body">
       <h4>{{question.description}}</h4>
       <p>{{question.choiceone}}</p>
-      <p>{{question.choicetwo}}</p>
-      <p>{{question.choicethree}}</p>
-      <p>{{question.choicefour}}</p>
     </div>
-  </a>
-</div>
+ </div>
 {% else %}
-<p>No Questions found - questions in question</p>
+<p>No Questions found ----------- questions in question</p>
 {% endfor %}
 
 {% for Question in questions %}
