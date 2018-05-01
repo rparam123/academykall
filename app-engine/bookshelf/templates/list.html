@@ -19,14 +19,14 @@
 {% block content %}
 
 <h3>Questions</h3>
-<a href="/books/add" class="btn btn-success btn-sm">
+<a href="/questions/add" class="btn btn-success btn-sm">
   <i class="glyphicon glyphicon-plus"></i>
   Add question
 </a>
 
 {% for question in questions %}
 <div class="media">
-  <a href="/books/{{question.id}}">
+  <a href="/questions/{{question.id}}">
     <div class="media-body">
       <h4>{{question.description}}</h4>
       <p>{{question.choiceone}}</p>
