@@ -23,11 +23,11 @@ crud = Blueprint('crud', __name__)
 @crud.route("/")
 def list():
     token = request.args.get('page_token', None)
-    books, next_page_token = get_model().list(cursor=token)
+    questions, next_page_token = get_model().list(cursor=token)
 
     return render_template(
         "list.html",
-        books=books,
+        questions=questions,
         next_page_token=next_page_token)
 # [END list]
 
