@@ -34,8 +34,8 @@ def list():
 
 @crud.route('/<id>')
 def view(id):
-    book = get_model().read(id)
-    return render_template("view.html", book=book)
+    question = get_model().read(id)
+    return render_template("view.html", question=question)
 
 
 # [START add]
@@ -44,26 +44,26 @@ def add():
     if request.method == 'POST':
         data = request.form.to_dict(flat=True)
 
-        book = get_model().create(data)
+        question = get_model().create(data)
 
-        return redirect(url_for('.view', id=book['id']))
+        return redirect(url_for('.view', id=question['id']))
 
-    return render_template("form.html", action="Add", book={})
+    return render_template("form.html", action="Add", question={})
 # [END add]
 
 
 @crud.route('/<id>/edit', methods=['GET', 'POST'])
 def edit(id):
-    book = get_model().read(id)
+    question = get_model().read(id)
 
     if request.method == 'POST':
         data = request.form.to_dict(flat=True)
 
-        book = get_model().update(data, id)
+        question = get_model().update(data, id)
 
-        return redirect(url_for('.view', id=book['id']))
+        return redirect(url_for('.view', id=question['id']))
 
-    return render_template("form.html", action="Edit", book=book)
+    return render_template("form.html", action="Edit", question=question)
 
 
 @crud.route('/<id>/delete')
