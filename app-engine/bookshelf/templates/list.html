@@ -24,7 +24,7 @@
   Add question
 </a>
 
-{% for questions in question %}
+{% for Questions in question %}
 <div class="media">
   <a href="/questions/{{question.id}}">
     <div class="media-body">
@@ -37,10 +37,10 @@
   </a>
 </div>
 {% else %}
-<p>No questions found - questions in question</p>
+<p>No Questions found - questions in question</p>
 {% endfor %}
 
-{% for questions in questions %}
+{% for Questions in questions %}
 <div class="media">
   <a href="/questions/{{question.id}}">
     <div class="media-body">
@@ -53,10 +53,10 @@
   </a>
 </div>
 {% else %}
-<p>No questions found - questions in questions</p>
+<p>No Questions found - questions in questions</p>
 {% endfor %}
 
-{% for questions in Question %}
+{% for Questions in Question %}
 <div class="media">
   <a href="/questions/{{question.id}}">
     <div class="media-body">
@@ -69,10 +69,10 @@
   </a>
 </div>
 {% else %}
-<p>No questions found - questions in Question</p>
+<p>No Questions found - questions in Question</p>
 {% endfor %}
 
-{% for questions in Questions %}
+{% for Questions in Questions %}
 <div class="media">
   <a href="/questions/{{question.id}}">
     <div class="media-body">
@@ -85,7 +85,7 @@
   </a>
 </div>
 {% else %}
-<p>No questions found - questions in Questions</p>
+<p>No Questions found - questions in Questions</p>
 {% endfor %}
 
 {% if next_page_token %}
