@@ -25,11 +25,13 @@ def init_app(app):
 
 
 # [START model]
-class Book(ndb.Model):
-    author = ndb.StringProperty()
+class Question(ndb.Model):
     description = ndb.StringProperty(indexed=False)
-    publishedDate = ndb.StringProperty()
-    title = ndb.StringProperty()
+    choiceone = ndb.StringProperty()
+    choicetwo = ndb.StringProperty()
+    choicethree = ndb.StringProperty()
+    choicefour = ndb.StringProperty()
+    answer = ndb.StringProperty()
 # [END model]
 
 
@@ -48,13 +50,15 @@ def from_datastore(entity):
         return None
     if isinstance(entity, builtin_list):
         entity = entity.pop()
-    book = {}
-    book['id'] = entity.key.id()
-    book['author'] = entity.author
-    book['description'] = entity.description
-    book['publishedDate'] = entity.publishedDate
-    book['title'] = entity.title
-    return book
+    question = {}
+    question['id'] = entity.key.id()
+    question['description'] = entity.description
+    question['choiceone'] = entity.choiceone
+    question['choicetwo'] = entity.choicetwo
+    question['choicethree'] = entity.choicethree
+    question['choicefour'] = entity.choicefour 
+    question['answer'] = entity.answer
+    return question
 # [END from_datastore]
 
 
@@ -63,7 +67,7 @@ def from_datastore(entity):
 def list(limit=10, cursor=None):
     if cursor:
         cursor = Cursor(urlsafe=cursor)
-    query = Book.query().order(Book.title)
+    query = Question.query().order(Question.id)
     entities, cursor, more = query.fetch_page(limit, start_cursor=cursor)
     entities = builtin_list(map(from_datastore, entities))
     return entities, cursor.urlsafe() if len(entities) == limit else None
@@ -72,8 +76,8 @@ def list(limit=10, cursor=None):
 
 # [START read]
 def read(id):
-    book_key = ndb.Key('Book', int(id))
-    results = book_key.get()
+    question_key = ndb.Key('Question', int(id))
+    results = question_key.get()
     return from_datastore(results)
 # [END read]
 
@@ -81,16 +85,18 @@ def read(id):
 # [START update]
 def update(data, id=None):
     if id:
-        key = ndb.Key('Book', int(id))
-        book = key.get()
+        key = ndb.Key('Question', int(id))
+        question = key.get()
     else:
-        book = Book()
-    book.author = data['author']
-    book.description = data['description']
-    book.publishedDate = data['publishedDate']
-    book.title = data['title']
-    book.put()
-    return from_datastore(book)
+        question = Question()
+    question.description = data['description']
+    question.choiceone = data['choiceone']
+    question.choicetwo = data['choicetwo']
+    question.choicethree = data['choicethree']
+    question.choicefour = data['choicefour']
+    question.answer = data['answer']
+    question.put()
+    return from_datastore(question)
 
 create = update
 # [END update]
@@ -98,6 +104,6 @@ create = update
 
 # [START delete]
 def delete(id):
-    key = ndb.Key('Book', int(id))
+    key = ndb.Key('Question', int(id))
     key.delete()
 # [END delete]
