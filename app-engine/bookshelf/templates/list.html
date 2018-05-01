@@ -18,26 +18,26 @@
 
 {% block content %}
 
-<h3>Books</h3>
+<h3>Questions</h3>
 <a href="/books/add" class="btn btn-success btn-sm">
   <i class="glyphicon glyphicon-plus"></i>
-  Add book
+  Add question
 </a>
 
-{% for book in books %}
+{% for question in books %}
 <div class="media">
-  <a href="/books/{{book.id}}">
-    <div class="media-left">
-      <img src="https://storage.googleapis.com/cloud-training/CP100/Bookshelf/bookplaceholder.jpg">
-    </div>
+  <a href="/books/{{question.id}}">
     <div class="media-body">
-      <h4>{{book.title}}</h4>
-      <p>{{book.author}}</p>
+      <h4>{{question.description}}</h4>
+      <p>{{question.choiceone}}</p>
+      <p>{{question.choicetwo}}</p>
+      <p>{{question.choicethree}}</p>
+      <p>{{question.choicefour}}</p>
     </div>
   </a>
 </div>
 {% else %}
-<p>No books found</p>
+<p>No questions found</p>
 {% endfor %}
 
 {% if next_page_token %}
