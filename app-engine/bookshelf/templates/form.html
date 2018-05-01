@@ -18,29 +18,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3>{{action}} book</h3>
+<h3>{{action}} question</h3>
 
 <form method="POST" enctype="multipart/form-data">
 
   <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" value="{{book.title}}" class="form-control"/>
+    <label for="description">Question</label>
+    <textarea name="description" id="description" class="form-control">{{question.description}}</textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="choiceone">Choice One</label>
+    <input type="text" name="choiceone" id="choiceone" value="{{question.choiceone}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="author">Author</label>
-    <input type="text" name="author" id="author" value="{{book.author}}" class="form-control"/>
+    <label for="choicetwo">Choice Two</label>
+    <input type="text" name="choicetwo" id="choicetwo" value="{{question.choicetwo}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="publishedDate">Date Published</label>
-    <input type="text" name="publishedDate" id="publishedDate" value="{{book.publishedDate}}" class="form-control"/>
+    <label for="choicethree">Choice Three</label>
+    <input type="text" name="choicethree" id="choicethree" value="{{question.choicethree}}" class="form-control"/>
   </div>
 
   <div class="form-group">
-    <label for="description">Description</label>
-    <textarea name="description" id="description" class="form-control">{{book.description}}</textarea>
+    <label for="choicefour">Choice Four</label>
+    <input type="text" name="choicefour" id="choicefour" value="{{question.choicefour}}" class="form-control"/>
   </div>
+
+  <div class="form-group">
+    <label for="answer">Answer</label>
+    <input type="text" name="answer" id="answer" value="{{question.answer}}" class="form-control"/>
+  </div>
+
 
   <button type="submit" class="btn btn-success">Save</button>
 </form>
