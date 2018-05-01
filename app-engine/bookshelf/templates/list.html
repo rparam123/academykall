@@ -25,11 +25,15 @@
 </a>
 
 <div class="media">
-  <a href="/questions/5629499534213120">
-    <div class="media-body">
-      <h4>{{question.description}}</h4>
-    </div>
-  </a>
+  <div class="media-body">
+    <h4 class="question-description">
+      {{question.description}}
+    </h4>
+    <p class="question-choiceone">{{question.choiceone}}</p>
+    <p class="question-choicetwo">{{question.choicetwo}}</p>
+    <p class="question-choicethree">{{question.choicethree}}</p>
+    <p class="question-choicefour">{{question.choicefour}}</p>
+  </div>
 </div>
 
 {% if next_page_token %}
