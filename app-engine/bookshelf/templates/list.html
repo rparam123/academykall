@@ -26,17 +26,6 @@
 
 {% for question in questions %}
 <div class="media">
-   <div class="media-body">
-      <h4>{{question.description}}</h4>
-      <p>{{question.choiceone}}</p>
-    </div>
- </div>
-{% else %}
-<p>No Questions found ----------- questions in question</p>
-{% endfor %}
-
-{% for Question in questions %}
-<div class="media">
   <a href="/questions/{{question.id}}">
     <div class="media-body">
       <h4>{{question.description}}</h4>
@@ -47,44 +36,9 @@
     </div>
   </a>
 </div>
-{% else %}
-<p>No Questions found - questions in questions</p>
+# {% else %}
+# <p>No Questions found - questions in questions</p>
 {% endfor %}
-
-{% for Question in Question %}
-<div class="media">
-  <a href="/questions/{{question.id}}">
-    <div class="media-body">
-      <h4>{{question.description}}</h4>
-      <p>{{question.choiceone}}</p>
-      <p>{{question.choicetwo}}</p>
-      <p>{{question.choicethree}}</p>
-      <p>{{question.choicefour}}</p>
-    </div>
-  </a>
-</div>
-{% else %}
-<p>No Questions found - questions in Question</p>
-{% endfor %}
-
-{% for Question in Questions %}
-<div class="media">
-  <a href="/questions/{{question.id}}">
-    <div class="media-body">
-      <h4>{{question.description}}</h4>
-      <p>{{question.choiceone}}</p>
-      <p>{{question.choicetwo}}</p>
-      <p>{{question.choicethree}}</p>
-      <p>{{question.choicefour}}</p>
-    </div>
-  </a>
-</div>
-{% else %}
-<p>No Questions found - questions in Questions</p>
-{% endfor %}
-
-print questions[1]
-print questions[2]
 
 {% if next_page_token %}
 <nav>
