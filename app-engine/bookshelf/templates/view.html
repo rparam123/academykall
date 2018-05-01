@@ -18,30 +18,28 @@
 
 {% block content %}
 
-<h3>Book</h3>
+<h3>Question</h3>
 
 <div class="btn-group">
-  <a href="/books/{{book.id}}/edit" class="btn btn-primary btn-sm">
+  <a href="/books/{{question.id}}/edit" class="btn btn-primary btn-sm">
     <i class="glyphicon glyphicon-edit"></i>
-    Edit book
+    Edit question
   </a>
-  <a href="/books/{{book.id}}/delete" class="btn btn-danger btn-sm">
+  <a href="/books/{{question.id}}/delete" class="btn btn-danger btn-sm">
     <i class="glyphicon glyphicon-trash"></i>
-    Delete book
+    Delete question
   </a>
 </div>
 
 <div class="media">
-  <div class="media-left">
-    <img class="book-image" src="https://storage.googleapis.com/cloud-training/CP100/Bookshelf/bookplaceholder.jpg">
-  </div>
   <div class="media-body">
-    <h4 class="book-title">
-      {{book.title}}
-      <small>{{book.publishedDate}}</small>
+    <h4 class="question-description">
+      {{question.description}}
     </h4>
-    <h5 class="book-author">By {{book.author|default('Unknown', True)}}</h5>
-    <p class="book-description">{{book.description}}</p>
+    <p class="question-choiceone">{{question.choiceone}}</p>
+    <p class="question-choicetwo">{{question.choicetwo}}</p>
+    <p class="question-choicethree">{{question.choicethree}}</p>
+    <p class="question-choicefour">{{question.choicefour}}</p>
   </div>
 </div>
 
