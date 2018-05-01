@@ -27,6 +27,9 @@
 {% for question in question %}
 <div class="media">
   <a href="/questions/{{question.id}}">
+    <div class="media-left">
+      <img src="https://storage.googleapis.com/cloud-training/CP100/Bookshelf/bookplaceholder.jpg">
+    </div>
     <div class="media-body">
       <h4>{{question.description}}</h4>
       <p>{{question.choiceone}}</p>
