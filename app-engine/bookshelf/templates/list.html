@@ -37,7 +37,55 @@
   </a>
 </div>
 {% else %}
-<p>No questions found</p>
+<p>No questions found - question in question</p>
+{% endfor %}
+
+{% for question in questions %}
+<div class="media">
+  <a href="/questions/{{question.id}}">
+    <div class="media-body">
+      <h4>{{question.description}}</h4>
+      <p>{{question.choiceone}}</p>
+      <p>{{question.choicetwo}}</p>
+      <p>{{question.choicethree}}</p>
+      <p>{{question.choicefour}}</p>
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No questions found - question in questions</p>
+{% endfor %}
+
+{% for question in Question %}
+<div class="media">
+  <a href="/questions/{{question.id}}">
+    <div class="media-body">
+      <h4>{{question.description}}</h4>
+      <p>{{question.choiceone}}</p>
+      <p>{{question.choicetwo}}</p>
+      <p>{{question.choicethree}}</p>
+      <p>{{question.choicefour}}</p>
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No questions found - question in Question</p>
+{% endfor %}
+
+{% for question in Questions %}
+<div class="media">
+  <a href="/questions/{{question.id}}">
+    <div class="media-body">
+      <h4>{{question.description}}</h4>
+      <p>{{question.choiceone}}</p>
+      <p>{{question.choicetwo}}</p>
+      <p>{{question.choicethree}}</p>
+      <p>{{question.choicefour}}</p>
+    </div>
+  </a>
+</div>
+{% else %}
+<p>No questions found - question in Questions</p>
 {% endfor %}
 
 {% if next_page_token %}
